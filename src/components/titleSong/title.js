@@ -1,9 +1,7 @@
-import data from "../../data/single-sample";
-
-const title = () => {
+const title = (props) => {
     return (
         <div>
-            <h4>{data.album.name}</h4>
+            <h4>{props.judul}</h4>
         </div>
     );
 };

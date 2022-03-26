@@ -1,9 +1,7 @@
-import data from "../../data/single-sample.js";
-
-const img = () => {
+const img = ({gambar}) => {
     return(
         <div>
-            <img src={data.album.images[1].url} />
+            <img src={gambar} />
         </div>
     );
 };

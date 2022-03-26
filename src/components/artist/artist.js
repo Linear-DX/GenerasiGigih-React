@@ -1,9 +1,7 @@
-import data from "../../data/single-sample.js";
-
-const artistName = () => {
-    return (
+const artistName = (props) => {
+    return(
         <div>
-            <p>{data.album.artists[0].name}</p>
+            <p>{props.artis}</p>
         </div>
     );
 };
