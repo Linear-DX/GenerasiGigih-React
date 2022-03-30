@@ -1,12 +1,11 @@
-import Data from "../../data/all-sample.js";
 import Img from "../img/img.js";
 import ArtistName from "../artist/artist.js";
 import TitleSong from "../titleSong/title.js";
 import './home.css';
 
 
-const Home = () => {
-    const Loop = Data.map((item, index) => {
+const Home = ({data}) => {
+    const Loop = data.map((item, index) => {
         return (
             <div key = {index}>
                 <div className ="playlist">
@@ -19,7 +18,7 @@ const Home = () => {
         )
     })
     return(
-        <div>{Loop}</div>
+        <div >{Loop}</div>
     )
 };
 

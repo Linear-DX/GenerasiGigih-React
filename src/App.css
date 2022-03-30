@@ -36,3 +36,64 @@
     transform: rotate(360deg);
   }
 }
+
+.searchHome-wrapper {
+  margin-top: 20px;
+}
+
+.searchHome-wrapper input {
+  height: 30px;
+  width: 220px;
+  margin-right: 20px;
+  border-radius: 8px;
+  border: 1px solid #282c34;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.searchHome-wrapper button {
+  height: 35px;
+  width: 80px;
+  background-color: #74FFD9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0px 6px #63DBBB;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.searchHome-wrapper button:hover {
+  opacity: 1;
+}
+
+.searchHome-wrapper button:active {
+  position: relative;
+  box-shadow: none;
+  top: 6px;
+}
+
+.loginHome-wrapper button {
+  border: 1px solid #eee;
+}
+
+.loginHome button {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #74FFD9;
+  width: 120px;
+  height: 50px;
+  box-shadow: 0px 6px #63DBBB;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.loginHome button:hover {
+  opacity: 1;
+}
+
+.loginHome button:active {
+  position: relative;
+  box-shadow: none;
+  top: 6px;
+}
