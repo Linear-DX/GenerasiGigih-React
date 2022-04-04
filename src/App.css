@@ -39,6 +39,7 @@
 
 .searchHome-wrapper {
   margin-top: 20px;
+  line-height: normal;
 }
 
 .searchHome-wrapper input {
@@ -52,12 +53,12 @@
 }
 
 .searchHome-wrapper button {
-  height: 35px;
+  padding: 10px 0;
+  height: 50px;
   width: 80px;
   background-color: #74FFD9;
   border-radius: 8px;
   border: 1px solid #eee;
-  box-shadow: 0px 6px #63DBBB;
   cursor: pointer;
   opacity: 0.8;
 }
@@ -66,10 +67,8 @@
   opacity: 1;
 }
 
-.searchHome-wrapper button:active {
-  position: relative;
-  box-shadow: none;
-  top: 6px;
+.searchHome-wrapper button p {
+  line-height: 3px;
 }
 
 .loginHome-wrapper button {
@@ -96,4 +95,58 @@
   position: relative;
   box-shadow: none;
   top: 6px;
+}
+
+.playlist-wrapper {
+  flex: left;
+  width: 720px;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  padding: 50px 20px;
+  margin-top: 20px;
+}
+
+.playlist-wrapper img {
+  position: relative;
+  float: left;
+  border-radius: 8px;
+  margin-top: -30px;
+  margin-right: 20px;
+}
+
+.playlist-wrapper h4 {
+  width: 25%;
+  float: left;
+  margin-top: -5px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.playlist-wrapper p {
+  width: 25%;
+  float: left;
+  font-size: 14px;
+  margin-top : -7px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.playlist-wrapper button {
+  float: left;
+  background-color:#1F1F1F;
+  color: #fff;
+  padding: 15px;
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 4px 3px #080808;
+  border: 1px solid #9B9B9B;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: 80px;
+}
+
+.playlist-wrapper button:hover {
+  background-color: #080808;
 }
