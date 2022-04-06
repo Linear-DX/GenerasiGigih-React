@@ -4,8 +4,12 @@ import Home from '../home/home';
 import Profile from "../profile/profile.js";
 import Playlist from "../playlist/playlist.js";
 import Form from '../form/form';
+import { useSelector } from 'react-redux';
 
-const Search = ({ accessToken }) => {
+
+
+const Search = () => {
+    const accessToken = useSelector((state) => state.token.value);
     const [data, setData] = useState([]);
     const [query, setQuery] = useState("");
     const [selectedData, setSelectedData] = useState([]);
