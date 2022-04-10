@@ -1,7 +1,7 @@
 import queryString from 'query-string';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Login from '../login/login';
-import Search from '../search/search';
+// import Search from '../search/search';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAccessToken } from '../../reduxSlice/slice.js';
 import { useHistory } from 'react-router-dom';

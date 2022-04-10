@@ -1,7 +1,7 @@
-const img = ({gambar}) => {
+const img = ({gambar, title}) => {
     return(
         <div>
-            <img src={gambar} />
+            <img src={gambar} alt={title} />
         </div>
     );
 };
