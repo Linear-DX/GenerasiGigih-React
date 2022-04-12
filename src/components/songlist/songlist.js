@@ -1,4 +1,4 @@
-import '../../App.css';
+import  styles  from '../../App.module.css';
 import Img from '../img/img';
 import TitleSong from '../titleSong/title';
 import ArtistName from '../artist/artist';
@@ -19,14 +19,18 @@ import ArtistName from '../artist/artist';
 //     )
 // }
 
-const Songlist = ({ gambar, songName, artists, isSelected, handleSelectData, uri }) => {
+const Songlist = ({ gambar, songName,album, artists, isSelected, handleSelectData, uri }) => {
+    console.log(album);
     // const {artists, name: songName, isSelected, uri} = data
     return (
-        <div className='playlist-wrapper'>
-            <Img gambar={gambar} />
+        <div className={styles.SonglistWrapper}>
+            <Img gambar={gambar} className={styles.SonglistWrapperImage}/>
+            <div className={styles.SonglistWrapperText}>
             <TitleSong judul={songName} />
+            <p>{album}</p>
             <ArtistName artis={artists.map(artists => artists.name).join(',')} />
             <button type="submit" className={isSelected ? "selectedButton" : "unselectedButton"} onClick={() => handleSelectData(uri)}>{isSelected ? 'Deselect' : 'Select'}</button>
+            </div>
         </div>
     )
 }

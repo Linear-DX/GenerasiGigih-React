@@ -1,0 +1,56 @@
+.SonglistWrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    width: 500px;
+    min-height: 250px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.SonglistWrapperImage {
+    flex-direction: row;
+}
+
+.SonglistWrapperText {
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.SonglistWrapper img {
+    max-width: 150px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.SonglistWrapper h4 {
+    flex-grow: 1;
+    margin-right: 100Apx;
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.SonglistWrapper p {
+    font-size: 14px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.SonglistWrapper button {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 15px;
+    width: 150px;
+    border-radius: 8px;
+    box-shadow: 4px 3px #080808;
+    border: 1px solid #9B9B9B;
+    height: 50px;
+    align-items: center;
+}
+
+.SonglistWrapper button:hover {
+    background-color: #080808;
+}

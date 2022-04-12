@@ -9,8 +9,9 @@ const Home = ({ mergedData, handleSelectData }) => {
                 <Songlist
                     key={uri}
                     uri={uri}
-                    gambar={data.album.images[2].url}
+                    gambar={data.album.images[1].url}
                     songName={data.name}
+                    album={data.album.name}
                     artists={data.artists}
                     handleSelectData={handleSelectData}
                     isSelected={data.isSelected}
