@@ -1,6 +1,5 @@
 .SonglistWrapper {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     border: 3px solid #ccc;
     border-radius: 8px;
@@ -16,26 +15,26 @@
 
 .SonglistWrapperText {
     flex-direction: column;
-    margin-left: 50px;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 60px;
+    line-height: 25px;
 }
 
 .SonglistWrapper img {
     max-width: 150px;
     border-radius: 8px;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 .SonglistWrapper h4 {
     flex-grow: 1;
-    margin-right: 100Apx;
     font-size: 16px;
     font-family: 'PT Sans', sans-serif;
 }
 
 .SonglistWrapper p {
     font-size: 14px;
-    padding-left: 30px;
-    padding-bottom: 10px;
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -48,7 +47,7 @@
     box-shadow: 4px 3px #080808;
     border: 1px solid #9B9B9B;
     height: 50px;
-    align-items: center;
+    margin-top: 7px;
 }
 
 .SonglistWrapper button:hover {
