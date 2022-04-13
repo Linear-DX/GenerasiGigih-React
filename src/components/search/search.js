@@ -5,9 +5,7 @@ import Profile from "../profile/profile.js";
 import Playlist from "../playlist/playlist.js";
 import Form from '../form/form';
 import { useSelector } from 'react-redux';
-
-
-
+import CustomAppBar from '../../theme/appbar.js';
 
 const Search = () => {
     const accessToken = useSelector((state) => state.token.value);
@@ -106,9 +104,10 @@ const Search = () => {
     }
 
     return (
-        <div className="searchHome-wrapper">
+        <div>
+            <CustomAppBar />
             <Profile fetchUserData={fetchUserData} user={user} />
-     
+
             {user.user_id !== undefined && (
                 <>
                     <Playlist
@@ -122,12 +121,13 @@ const Search = () => {
                 </>
             )}
             <br />
+            <div className="searchHome-wrapper">
+                {mergedData !== undefined && (
+                    <Home mergedData={mergedData} handleSelectData={handleSelectData} />
+                )
 
-            {mergedData !== undefined && (
-                <Home mergedData={mergedData} handleSelectData={handleSelectData} />
-            )
-
-            }
+                }
+            </div>
         </div>
     )
 }

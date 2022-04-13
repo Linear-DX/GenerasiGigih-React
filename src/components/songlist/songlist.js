@@ -2,6 +2,9 @@ import styles from '../../App.module.css';
 import Img from '../img/img';
 import TitleSong from '../titleSong/title';
 import ArtistName from '../artist/artist';
+import Button from '@mui/material/Button';
+// import PrimarySearchAppBar from '../../theme/appbar';
+
 // import { useState } from 'react';
 
 
@@ -23,6 +26,8 @@ const Songlist = ({ gambar, songName, album, artists, isSelected, handleSelectDa
     console.log(album);
     // const {artists, name: songName, isSelected, uri} = data
     return (
+        <>
+        {/* <PrimarySearchAppBar /> */}
         <div className={styles.SonglistWrapper}>
             <Img gambar={gambar} className={styles.SonglistWrapperImage} />
             <div className={styles.SonglistWrapperText}>
@@ -32,6 +37,7 @@ const Songlist = ({ gambar, songName, album, artists, isSelected, handleSelectDa
                 <button type="submit" className={isSelected ? "selectedButton" : "unselectedButton"} onClick={() => handleSelectData(uri)}>{isSelected ? 'Deselect' : 'Select'}</button>
             </div>
         </div>
+        </>
     )
 }
 

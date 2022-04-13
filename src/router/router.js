@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Initiate from "../components/initiate/initiate";
-// import Playlist from "../components/playlist/playlist";
-// import Login from "../components/login/login";
 import Search from "../components/search/search";
-// import Profile from "../components/profile/profile";
 import { useSelector } from 'react-redux';
+
 
 function AppRouter() {
     const accessToken = useSelector((state) => state.token.value);
