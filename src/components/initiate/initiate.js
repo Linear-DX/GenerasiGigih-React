@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Login from '../login/login';
 // import Search from '../search/search';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAccessToken } from '../../reduxSlice/slice.js';
+import { setAccessToken } from '../../reduxSlice/slice';
 import { useHistory } from 'react-router-dom';
 
 const Initiate = () => {

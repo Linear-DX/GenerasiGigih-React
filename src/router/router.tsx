@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 
 function AppRouter() {
-    const accessToken = useSelector((state) => state.token.value);
+    const accessToken = useSelector((state: any) => state.token.value);
     return (
         <Router>
             <Switch>

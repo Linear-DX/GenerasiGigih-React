@@ -1,7 +1,7 @@
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import { Button } from '@mui/material';
-import { fontWeight } from '@mui/system';
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'absolute',
@@ -42,6 +42,10 @@ export default function SearchEngine({ onChange }) {
                     placeholder="Search term"
                     inputProps={{ 'aria-label': 'search' }}
                     onChange={onChange}
+                    style={{
+                        justify: 'center',
+                        marginRight: '110px'
+                    }}
                 />
             </Search>
             <Button variant="text" type="submit"
@@ -49,7 +53,7 @@ export default function SearchEngine({ onChange }) {
                     position: 'relative',
                     marginTop: '12px',
                     color: 'white',
-                    marginLeft: '11.5rem',
+                    justify: 'center',
                     opacity: 0.8,
                     border: '1px solid #616161',
                 }}>
