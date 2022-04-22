@@ -3,7 +3,7 @@ import '../../App.css';
 const Login = () => {
     var client_id = process.env.REACT_APP_SPOTIFY_KEY;
     // var redirect_uri = 'http://localhost:3000/';
-    var redirect_uri = 'https://generasi-gigih-react-chrismario-cinear.vercel.app/';
+    var redirect_uri = process.env.REACT_APP_VERCEL_URL;
     var scope = 'playlist-modify-private';
 
     var url = 'https://accounts.spotify.com/authorize';
