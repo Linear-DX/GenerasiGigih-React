@@ -9,7 +9,6 @@ import CustomAppBar from '../../theme/appbar.js';
 import { RootState } from '../../store';
 import { Item2, Item3 } from '../../type/dataType';
 
-
 const Search = () => {
   const accessToken = useSelector((state: RootState) => state.token.value);
   const [data, setData] = useState<Item2[]>([]);
@@ -27,7 +26,6 @@ const Search = () => {
       isSelected: !!selectedData.find((selectedData) => selectedData === data.uri),
     }));
     setMergedData(mergedDataWithSelectedData);
-    // console.log(mergedData)
   }, [selectedData, data]);
 
   const handleSelectData = (uri) => {
@@ -67,15 +65,7 @@ const Search = () => {
       console.log(data);
     }
     accessToken !== undefined && (fetchUserData())
-  }, []);
-
-  // const fetchUserData = async() =>  {
-  //   const data = await axios
-  //     .get(`https://api.spotify.com/v1/me?access_token=${accessToken}`)
-  //     .catch((err) => err)
-  //   setUser({ ...user, displayName: data.data.display_name, user_id: data.data.id })
-  //   console.log(data);
-  // }
+  }, [accessToken]);
 
   const [addPlaylistData, setAddPlaylistData] = useState({
     title: '',
@@ -119,9 +109,7 @@ const Search = () => {
   return (
     <div>
       <CustomAppBar />
-      {/* <Profile fetchUserData={fetchUserData} user={user} /> */}
       <Profile user={user} />
-
       {user.user_id !== undefined && (
         <div>
           <Playlist
@@ -136,9 +124,7 @@ const Search = () => {
       <div className="searchHome-wrapper">
         {mergedData !== undefined && (
           <Home mergedData={mergedData} handleSelectData={handleSelectData} />
-        )
-
-        }
+        )}
       </div>
     </div>
   )

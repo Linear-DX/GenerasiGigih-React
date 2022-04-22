@@ -19,25 +19,6 @@ const Home = ({ mergedData, handleSelectData }) => {
             </div>
         )
     })
-
-    // const Loop = data.map((item, index) => {
-    //     return (
-    //         <div key={index}>
-    //             <div>
-    //                 <Playlist
-    //                     gambar={item.album.images[2].url}
-    //                     judul={item.name}
-    //                     artis={item.album.artists[0].name}
-    //                 />
-    //             </div>
-    //         </div>
-    //     )
-    // })
-    // return (
-    //     <div>{Loop}</div>
-    // )
-
-    // return <>{renderData()}</>
 };
 
 export default Home;

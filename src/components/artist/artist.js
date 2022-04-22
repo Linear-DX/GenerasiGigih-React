@@ -1,5 +1,5 @@
 const artistName = (props) => {
-    return(
+    return (
         <div>
             <p>{props.artis}</p>
         </div>

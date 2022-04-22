@@ -11,7 +11,7 @@ const Login = () => {
     url += '&client_id=' + encodeURIComponent(client_id);
     url += '&scope=' + encodeURIComponent(scope);
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
-    
+
     return (
         <div className="loginHome-wrapper">
             <a className="loginHome" href={url}>

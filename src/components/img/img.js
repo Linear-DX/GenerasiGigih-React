@@ -1,5 +1,5 @@
-const img = ({gambar, title}) => {
-    return(
+const img = ({ gambar, title }) => {
+    return (
         <div>
             <img src={gambar} alt={title} />
         </div>

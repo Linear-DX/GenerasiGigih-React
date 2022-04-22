@@ -17,14 +17,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         appbarBackgroundColor: {
-            // light: will be calculated from palette.primary.main,
             main: '#000',
-            // dark: will be calculated from palette.primary.main,
-            // contrastText: will be calculated to contrast with palette.primary.main
         }
     }
 });
-
 
 export default function CustomAppBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);

@@ -40,7 +40,6 @@ const ButtonHover = styled('div')(({ theme }) => ({
     },
 }));
 
-
 export default function SearchEngine({ onChange }) {
     return (
         <>
