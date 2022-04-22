@@ -4,10 +4,23 @@ const Playlist = ({ handleAddPlaylistOnChange, handleAddPlaylistOnSubmit, addPla
             <h2>Create Playlist</h2>
             
             <form onSubmit={handleAddPlaylistOnSubmit}>
-                {/* <label htmFor="title">Title</label><br /> */}
-                <input type="text" value={addPlaylistData.title} onChange={handleAddPlaylistOnChange} name="title"  required />
+                <label htmFor="title">Playlist Name</label><br />
+                <input 
+                type="text" 
+                value={addPlaylistData.title} 
+                onChange={handleAddPlaylistOnChange} 
+                name="title"  
+                required />
+
                 <br />
-                <textarea value={addPlaylistData.description} onChange={handleAddPlaylistOnChange} name="description"></textarea>
+                <label htmFor="description">Description</label><br />
+                <textarea 
+                value={addPlaylistData.description} 
+                onChange={handleAddPlaylistOnChange} 
+                name="description"
+                label="Description"
+                >
+                </textarea>
                 <br />
                 <button type="submit">Submit</button>
             </form>
