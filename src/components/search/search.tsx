@@ -9,6 +9,7 @@ import CustomAppBar from '../../theme/appbar.js';
 import { RootState } from '../../store';
 import { Item2, Item3 } from '../../type/dataType';
 
+
 const Search = () => {
   const accessToken = useSelector((state: RootState) => state.token.value);
   const [data, setData] = useState<Item2[]>([]);
@@ -17,7 +18,6 @@ const Search = () => {
   const [mergedData, setMergedData] = useState<Item3[]>([]);
   const [user, setUser] = useState({
     displayName: '',
-    imagesUrl: '',
     user_id: undefined
   })
 
@@ -27,7 +27,7 @@ const Search = () => {
       isSelected: !!selectedData.find((selectedData) => selectedData === data.uri),
     }));
     setMergedData(mergedDataWithSelectedData);
-    console.log(mergedData)
+    // console.log(mergedData)
   }, [selectedData, data]);
 
   const handleSelectData = (uri) => {
@@ -56,82 +56,92 @@ const Search = () => {
     e.preventDefault();
     getData(accessToken)
   }
+
   useEffect(() => {
     const fetchUserData = async () => {
       const data = await axios
         .get(`https://api.spotify.com/v1/me?access_token=${accessToken}`)
+        .then((res) => res)
         .catch((err) => err)
-      setUser({ ...user, displayName: data.data.display_name, user_id: data.data.id })
+      setUser({ displayName: data.data.display_name, user_id: data.data.id })
       console.log(data);
     }
-
     accessToken !== undefined && (fetchUserData())
-},[accessToken, user])
+  }, []);
 
-const [addPlaylistData, setAddPlaylistData] = useState({
-  title: '',
-  description: ''
-})
+  // const fetchUserData = async() =>  {
+  //   const data = await axios
+  //     .get(`https://api.spotify.com/v1/me?access_token=${accessToken}`)
+  //     .catch((err) => err)
+  //   setUser({ ...user, displayName: data.data.display_name, user_id: data.data.id })
+  //   console.log(data);
+  // }
 
-const params = {
-  name: addPlaylistData.title,
-  description: addPlaylistData.description,
-  collaborative: false,
-  public: false
-}
+  const [addPlaylistData, setAddPlaylistData] = useState({
+    title: '',
+    description: ''
+  })
 
-const header = {
-  Authorization: `Bearer ${accessToken}`
-}
+  const params = {
+    name: addPlaylistData.title,
+    description: addPlaylistData.description,
+    collaborative: false,
+    public: false
+  }
 
-const handleAddPlaylistOnChange = e => {
-  const { name, value } = e.target;
-  setAddPlaylistData({ ...addPlaylistData, [name]: value })
-}
+  const header = {
+    Authorization: `Bearer ${accessToken}`
+  }
 
-const handleAddPlaylistOnSubmit = async e => {
-  e.preventDefault();
-  console.log(addPlaylistData);
-  await axios
-    .post(`https://api.spotify.com/v1/users/${user.user_id}/playlists`, params, { headers: header })
-    .then((res) => (handleAddItemToPlaylist(res.data.id)))
-    .catch((err) => err)
-}
+  const handleAddPlaylistOnChange = e => {
+    const { name, value } = e.target;
+    setAddPlaylistData({ ...addPlaylistData, [name]: value })
+  }
 
-const item = { uris: selectedData }
+  const handleAddPlaylistOnSubmit = async e => {
+    e.preventDefault();
+    console.log(addPlaylistData);
+    await axios
+      .post(`https://api.spotify.com/v1/users/${user.user_id}/playlists`, params, { headers: header })
+      .then((res) => (handleAddItemToPlaylist(res.data.id)))
+      .catch((err) => err)
+  }
 
-const handleAddItemToPlaylist = async (id) => {
-  const data = await axios
-    .post(`https://api.spotify.com/v1/playlists/${id}/tracks`, item, { headers: header })
-    .catch((err) => err)
-  console.log(data);
-}
+  const item = { uris: selectedData }
 
-return (
-  <div>
-    <CustomAppBar />
-    <Profile user={user} />
+  const handleAddItemToPlaylist = async (id) => {
+    const data = await axios
+      .post(`https://api.spotify.com/v1/playlists/${id}/tracks`, item, { headers: header })
+      .catch((err) => err)
+    console.log(data);
+  }
 
-    {user.user_id !== undefined && (
-      <div>
-        <Playlist
-          handleAddPlaylistOnChange={handleAddPlaylistOnChange}
-          handleAddPlaylistOnSubmit={handleAddPlaylistOnSubmit}
-          addPlaylistData={addPlaylistData}
-        />
-        <Form onChange={handleOnChange} onSubmit={handleOnSubmit} />
+  return (
+    <div>
+      <CustomAppBar />
+      {/* <Profile fetchUserData={fetchUserData} user={user} /> */}
+      <Profile user={user} />
+
+      {user.user_id !== undefined && (
+        <div>
+          <Playlist
+            handleAddPlaylistOnChange={handleAddPlaylistOnChange}
+            handleAddPlaylistOnSubmit={handleAddPlaylistOnSubmit}
+            addPlaylistData={addPlaylistData}
+          />
+          <Form onChange={handleOnChange} onSubmit={handleOnSubmit} />
+        </div>
+      )}
+      <br />
+      <div className="searchHome-wrapper">
+        {mergedData !== undefined && (
+          <Home mergedData={mergedData} handleSelectData={handleSelectData} />
+        )
+
+        }
       </div>
-    )}
-    <br />
-    <div className="searchHome-wrapper">
-      {mergedData !== undefined && (
-        <Home mergedData={mergedData} handleSelectData={handleSelectData} />
-      )
-
-      }
     </div>
-  </div>
-)
+  )
 }
 
 export default Search;

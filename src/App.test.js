@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import userEvent from '@testing-library/user-event';
+import SearchEngine from './theme/searchEngine';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders Search Engine', () => {
+  render(<SearchEngine />);
+
+  userEvent.type(screen.getByRole('textbox', {
+    name: /search/i
+  }))
+  userEvent.click(screen.getByRole('button', {
+    name: /search/i
+  }))
+  
+  screen.debug();
 });

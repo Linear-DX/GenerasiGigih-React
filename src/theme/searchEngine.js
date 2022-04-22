@@ -42,9 +42,9 @@ export default function SearchEngine({ onChange }) {
                     placeholder="Search term"
                     inputProps={{ 'aria-label': 'search' }}
                     onChange={onChange}
+                    align="center"
                     style={{
-                        justify: 'center',
-                        marginRight: '110px'
+                       alignContent: 'center'
                     }}
                 />
             </Search>
